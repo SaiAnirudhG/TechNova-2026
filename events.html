@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+<nav class="navbar">
+  <!--<div class="logo">MyLogo</div>-->
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./events.html">Events</a></li>
+    <li><a href="./feedback.html">Feedback</a></li>
+  </ul>
+</nav>
+    </header>
+<h1>TechNova 2026 - Events</h1>
+
+  <div class="events-container">
+
+    <!-- Event 1 -->
+    <div class="event-card">
+      <h2>Hackathon 24X</h2>
+      <div class="event-details">
+        <p><strong>Event ID:</strong> TN101</p>
+        <p><strong>Category:</strong> Coding</p>
+        <p><strong>Date & Time:</strong> 12 March 2026, 9:00 AM</p>
+        <p><strong>Venue:</strong> Innovation Hall</p>
+        <p><strong>Fee:</strong> ₹500</p>
+        <p><strong>Status:</strong> <span class="status-open">Form Open</span></p>
+      </div>
+      <button class="btn open-btn">Register Now</button>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="event-card">
+      <h2>Robo Wars</h2>
+      <div class="event-details">
+        <p><strong>Event ID:</strong> TN102</p>
+        <p><strong>Category:</strong> Robotics</p>
+        <p><strong>Date & Time:</strong> 13 March 2026, 11:00 AM</p>
+        <p><strong>Venue:</strong> Tech Arena</p>
+        <p><strong>Fee:</strong> ₹700</p>
+        <p><strong>Status:</strong> <span class="status-close">Form Closed</span></p>
+      </div>
+      <button class="btn close-btn">Registration Closed</button>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="event-card">
+      <h2>AI Challenge</h2>
+      <div class="event-details">
+        <p><strong>Event ID:</strong> TN103</p>
+        <p><strong>Category:</strong> Artificial Intelligence</p>
+        <p><strong>Date & Time:</strong> 13 March 2026, 2:00 PM</p>
+        <p><strong>Venue:</strong> Seminar Block A</p>
+        <p><strong>Fee:</strong> ₹400</p>
+        <p><strong>Status:</strong> <span class="status-open">Form Open</span></p>
+      </div>
+      <button class="btn open-btn">Register Now</button>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="event-card">
+      <h2>Cyber Security Quiz</h2>
+      <div class="event-details">
+        <p><strong>Event ID:</strong> TN104</p>
+        <p><strong>Category:</strong> Cyber Security</p>
+        <p><strong>Date & Time:</strong> 14 March 2026, 10:00 AM</p>
+        <p><strong>Venue:</strong> Lab Complex</p>
+        <p><strong>Fee:</strong> ₹300</p>
+        <p><strong>Status:</strong> <span class="status-open">Form Open</span></p>
+      </div>
+      <button class="btn open-btn">Register Now</button>
+    </div>
+
+    <!-- Event 5 -->
+    <div class="event-card">
+      <h2>Gaming Tournament</h2>
+      <div class="event-details">
+        <p><strong>Event ID:</strong> TN105</p>
+        <p><strong>Category:</strong> E-Sports</p>
+        <p><strong>Date & Time:</strong> 14 March 2026, 4:00 PM</p>
+        <p><strong>Venue:</strong> Gaming Zone</p>
+        <p><strong>Fee:</strong> ₹600</p>
+        <p><strong>Status:</strong> <span class="status-close">Form Closed</span></p>
+      </div>
+      <button class="btn close-btn">Registration Closed</button>
+    </div>
+
+  </div>
+  <br>
+
+<div class="form-container">
+    <h1>TechNova Tech Fest</h1>
+    <p class="subtitle">Student Event Registration Desk</p>
+
+    <!-- Global form error message banner -->
+    <div id="global-error" class="error-banner hidden"></div>
+
+    <!-- Live Counter -->
+    <div class="counter-box">
+        Total Successful Registrations: <span id="total-count">0</span>
+    </div>
+
+    <form id="technova-registration-form" novalidate>
+        
+        <!-- Section 1: Student Details -->
+        <fieldset>
+            <legend>Student Details</legend>
+            
+            <div class="form-group">
+                <label for="student-name">Full Name *</label>
+                <input type="text" id="student-name" name="studentName" placeholder="John Doe">
+                <span class="error-msg" id="error-name"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="student-email">Email Address *</label>
+                <input type="email" id="student-email" name="studentEmail" placeholder="john@example.com">
+                <span class="error-msg" id="error-email"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="student-mobile">Mobile Number *</label>
+                <input type="text" id="student-mobile" name="studentMobile" placeholder="10-digit mobile number">
+                <span class="error-msg" id="error-mobile"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="student-id">Registration Number *</label>
+                <input type="text" id="student-id" name="studentId" placeholder="Format: TECH-2026-XXXX">
+                <span class="error-msg" id="error-id"></span>
+            </div>
+        </fieldset>
+
+        <!-- Section 2: Event Selection -->
+        <fieldset>
+            <legend>Event Selection</legend>
+            
+            <div class="form-group">
+                <label for="event-select">Choose your Event *</label>
+                <select id="event-select" name="selectedEvent">
+                    <option value="" selected>-- Select an Event --</option>
+                    <option value="hackathon-24x">Hackathon 24x</option>
+                    <option value="robo-wars">Robo Wars (Closed/Full)</option>
+                    <option value="ai-challenge">AI Challenge</option>
+                    <option value="cyber-security-quiz">Cyber Security Quiz</option>
+                    <option value="gaming-tournament">Gaming Tournament</option>
+                </select>
+                <span class="error-msg" id="error-event"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Participation Type *</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="participation-individual" name="participationType" value="individual" checked>
+                        <label for="participation-individual">Individual</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="participation-team" name="participationType" value="team">
+                        <label for="participation-team">Team</label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Section 3: Team Details (Hidden by default until 'Team' is picked) -->
+        <fieldset id="team-details-section" class="hidden">
+            <legend>Team Details</legend>
+            
+            <div class="form-group">
+                <label for="team-name">Team Name *</label>
+                <input type="text" id="team-name" name="teamName" placeholder="Enter team name">
+                <span class="error-msg" id="error-team-name"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="team-size">Team Size (2 to 4 members) *</label>
+                <input type="number" id="team-size" name="teamSize" placeholder="e.g., 3">
+                <span class="error-msg" id="error-team-size"></span>
+            </div>
+        </fieldset>
+
+        <button type="submit" id="submit-btn">Register Now</button>
+    </form>
+
+    <!-- Success Dashboard Summary -->
+    <div id="success-receipt" class="success-box hidden">
+        <h2>🎉 Registration Successful!</h2>
+        <p>Your seat has been reserved. Here are your details:</p>
+        <hr>
+        <table class="receipt-table">
+            <tr><td><strong>Reg Number:</strong></td><td id="rec-id"></td></tr>
+            <tr><td><strong>Name:</strong></td><td id="rec-name"></td></tr>
+            <tr><td><strong>Event:</strong></td><td id="rec-event"></td></tr>
+            <tr><td><strong>Type:</strong></td><td id="rec-type"></td></tr>
+            <tr id="rec-team-row" class="hidden"><td><strong>Team Details:</strong></td><td id="rec-team"></td></tr>
+        </table>
+        <button id="close-receipt-btn" style="margin-top:15px; background-color: #10b981;">Register Another Student</button>
+    </div>
+</div>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>TechNova 2026</h3>
+                <p>Empowering the next generation of technological pioneers.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Helpdesk</h3>
+                <p>📧 Email: support@technova2026.edu</p>
+                <p>📞 Phone: +91 98765 43210</p>
+            </div>
+            <div class="footer-column">
+                <h3>Venue</h3>
+                <p>Nova Institute Campus</p>
+                <p>Tech Park Blocks, Sector 4</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TechNova Tech Fest. All Rights Reserved. Designed for Excellence.
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

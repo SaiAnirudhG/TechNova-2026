@@ -1,0 +1,16 @@
+{
+  "name": "technovafest",
+  "version": "1.0.0",
+  "description": "\"TechNova 2026\"",
+  "license": "ISC",
+  "author": "\"Team 9\"",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^42.2.0"
+  }
+}

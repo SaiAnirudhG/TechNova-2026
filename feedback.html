@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Student Feedback Desk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+<nav class="navbar" style="position: fixed;">
+  <!--<div class="logo">MyLogo</div>-->
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./events.html">Events</a></li>
+    <li><a href="./feedback.html">Feedback</a></li>
+  </ul>
+</nav>
+    </header>
+<div class="form-container">
+    <h1>TechNova Tech Fest</h1>
+    <p class="subtitle">Event Feedback & Analytics Desk</p>
+
+    <!-- Feedback Submission Form -->
+    <form id="technova-feedback-form" novalidate>
+        <fieldset>
+            <legend>Your Details</legend>
+            
+            <div class="form-group">
+                <label for="student-name">Full Name *</label>
+                <input type="text" id="student-name" name="studentName" placeholder="Jane Doe">
+                <span class="error-msg" id="error-name"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="student-id">Registration Number *</label>
+                <input type="text" id="student-id" name="studentId" placeholder="Format: TECH-2026-XXXX">
+                <span class="error-msg" id="error-id"></span>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Event Experience</legend>
+            
+            <div class="form-group">
+                <label for="event-attended">Which event did you attend? *</label>
+                <select id="event-attended" name="eventAttended">
+                    <option value="" selected>-- Select an Event --</option>
+                    <option value="hackathon-24x">Hackathon 24x</option>
+                    <option value="robo-wars">Robo Wars</option>
+                    <option value="ai-challenge">AI Challenge</option>
+                    <option value="cyber-security-quiz">Cyber Security Quiz</option>
+                    <option value="gaming-tournament">Gaming Tournament</option>
+                </select>
+                <span class="error-msg" id="error-event"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Event Rating *</label>
+                <div class="rating-group">
+                    <label class="rating-label"><input type="radio" name="eventRating" value="5"> 5 (Excellent)</label>
+                    <label class="rating-label"><input type="radio" name="eventRating" value="4"> 4 (Good)</label>
+                    <label class="rating-label"><input type="radio" name="eventRating" value="3"> 3 (Average)</label>
+                    <label class="rating-label"><input type="radio" name="eventRating" value="2"> 2 (Poor)</label>
+                    <label class="rating-label"><input type="radio" name="eventRating" value="1"> 1 (Terrible)</label>
+                </div>
+                <span class="error-msg" id="error-rating"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback-comments">Comments / Suggestions * (Min. 20 characters)</label>
+                <textarea id="feedback-comments" name="feedbackComments" rows="4" placeholder="Share your experience at the event..."></textarea>
+                <span class="error-msg" id="error-comments"></span>
+            </div>
+        </fieldset>
+
+        <button type="submit" id="submit-feedback-btn">Submit Feedback</button>
+    </form>
+
+    <!-- Analytics Dashboard View -->
+    <div id="analytics-dashboard" class="dashboard-box hidden">
+        <h2>📊 Festival Analytics & Feedback Summary</h2>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-title">Average Rating</span>
+                <span class="metric-value" id="avg-rating-value">0.0</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-title">Total Responses</span>
+                <span class="metric-value" id="total-feedbacks-count">0</span>
+            </div>
+        </div>
+
+        <h3>Recent Feedbacks</h3>
+        <div id="feedback-summary-list" class="summary-list">
+            <!-- Dynamic items append here -->
+        </div>
+        
+        <button id="back-to-form-btn" style="margin-top:20px; background-color: #475569;">Submit Another Feedback</button>
+    </div>
+</div>
+<img src="./images/img2.jpg" alt="person coding">
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>TechNova 2026</h3>
+                <p>Empowering the next generation of technological pioneers.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Helpdesk</h3>
+                <p>📧 Email: support@technova2026.edu</p>
+                <p>📞 Phone: +91 98765 43210</p>
+            </div>
+            <div class="footer-column">
+                <h3>Venue</h3>
+                <p>Nova Institute Campus</p>
+                <p>Tech Park Blocks, Sector 4</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TechNova Tech Fest. All Rights Reserved. Designed for Excellence.
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
